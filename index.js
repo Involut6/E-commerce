@@ -1,3 +1,9 @@
+function openDialogue() {
+  document.getElementById("dialogue").style.display = "block";
+}
+function closeDialogue() {
+  document.getElementById("dialogue").style.display = "none";
+}
 // Open the Modal
 function openModal() {
   document.getElementById("myModal").style.display = "block";

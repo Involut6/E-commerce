@@ -66,11 +66,12 @@
   </div>
 
   <nav class="navbar navbar-expand-lg navbar-light p-lg-0 p-sm-5">
-    <img src="images/icon-menu.svg" class="menu-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button> -->
-    <a class="navbar-brand" href="">sneakers</a>
+    <div class="nav-header">
+      <img src="images/icon-menu.svg" class="menu-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="">sneakers</a>
+      <img class="cart" id="dialogue-trigger" src="images/icon-cart.svg" onclick="openDialogue()">
+      <img class="avatar" src="images/image-avatar.png">
+    </div>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-items">
@@ -90,42 +91,23 @@
         </li>
       </ul>
     </div>
-    <img class="cart" id="dialogue-trigger" src="images/icon-cart.svg">
-    <img class="avatar" src="images/image-avatar.png">
 
   </nav>
-  <div class="dialogue-content dialogue-show" id="dialogue">
-    <p class="title">Cart</p>
-    <hr>
-    <p class="empty">Your cart is empty</p>
-  </div>
-  <div class="row main">
+  <div class="row main" onclick="closeDialogue()">
     <div class="col-md-6 col">
       <img src="images/image-product-1.jpg" class="main-img">
       <div class="row">
         <div class="col-md-3 sub-col">
           <img src="images/image-product-1-thumbnail.jpg" class="thumbnail1 small" onclick="openModal();currentSlide(1)">
-          <div class="overlay s1">
-
-          </div>
         </div>
         <div class="col-md-3 sub-col">
           <img src="images/image-product-2-thumbnail.jpg" class="thumbnail2 small" onclick="openModal();currentSlide(2)">
-          <div class="overlay s2">
-
-          </div>
         </div>
         <div class="col-md-3 sub-col">
           <img src="images/image-product-3-thumbnail.jpg" class="thumbnail3 small" onclick="openModal();currentSlide(3)">
-          <div class="overlay s3">
-
-          </div>
         </div>
         <div class="col-md-3 sub-col">
           <img src="images/image-product-4-thumbnail.jpg" class="thumbnail4 small" onclick="openModal();currentSlide(4)">
-          <div class="overlay s4">
-
-          </div>
         </div>
       </div>
     </div>
@@ -150,9 +132,9 @@
       <div class="row gy-2 buttons">
         <div class="col-md-4">
           <button type="button" class="count">
-            <img src="images/icon-minus.svg" class="minus" />
-            <h6>0</h6>
-            <img src="images/icon-plus.svg" class="plus" />
+            <img src="images/icon-minus.svg" class="minus" onclick="decreaseNumber()" />
+            <h6 class="number">0</h6>
+            <img src="images/icon-plus.svg" class="plus" onclick="increaseNumber()"/>
           </button>
         </div>
         <div class="col-md-8">
@@ -163,6 +145,11 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="dialogue-content" id="dialogue">
+    <p class="title">Cart</p>
+    <hr>
+    <p class="empty">Your cart is empty</p>
   </div>
 
   <div class="attribution">
